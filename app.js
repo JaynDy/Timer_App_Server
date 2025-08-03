@@ -7,7 +7,10 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const FILE_PATH = "./store.json";
 
-app.use(cors());
+app.use(cors({
+    origin: "https://timer-app-nine-neon.vercel.app",
+    credentials: true,
+  }));
 app.use(express.json());
 
 app.get("/timers", (req, res) => {
